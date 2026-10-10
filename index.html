@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#438BC4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Trinetra — See Beyond the Obvious</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <div data-component="auth"></div>
+  <main class="shell" id="app">
+    <div data-component="topbar"></div>
+    <div data-component="sidebar-backdrop"></div>
+<div data-component="header"></div>
+    <div class="app-layout">
+      <div data-component="sidebar"></div>
+      <div class="main-content" id="main-content">
+
+    <div data-component="view-home"></div>
+    <div data-component="view-dash"></div>
+    <div data-component="view-database"></div>
+    <div data-component="view-history"></div>
+    <div data-component="view-report"></div>
+    <div data-component="view-academy"></div>
+    <div data-component="view-settings"></div>
+    <footer class="footer"><span data-i18n="footerOne">Trinetra · A calm second opinion for modern messages.</span><span data-i18n="footerTwo">Built for the moment before you click.</span></footer>
+      </div>
+    </div>
+    <div data-component="bottom-nav"></div>
+  </main>
+
+  <script src="data/dataset.js"></script>
+  <script src="components/auth.js"></script>
+  <script src="components/topbar.js"></script>
+  <script src="components/sidebar-backdrop.js"></script>
+  <script src="components/header.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="components/view-home.js"></script>
+  <script src="components/view-dash.js"></script>
+  <script src="components/view-database.js"></script>
+  <script src="components/view-history.js"></script>
+  <script src="components/view-report.js"></script>
+  <script src="components/view-academy.js"></script>
+  <script src="components/view-settings.js"></script>
+  <script src="components/bottom-nav.js"></script>
+  <script src="src/mount.js"></script>
+  <script src="src/i18n/copy-base.js"></script>
+  <script src="src/detection/rules.js"></script>
+  <script src="src/core/dom.js"></script>
+  <script src="lib/risk-engine.js"></script>
+  <script src="src/checker/message-checker.js"></script>
+  <script src="src/checker/screenshot-ocr.js"></script>
+  <script src="src/auth/accounts.js"></script>
+  <script src="src/dashboard/dashboard.js"></script>
+  <script src="src/app/boot.js"></script>
+  <script src="src/i18n/copy-extra.js"></script>
+  <script src="src/checker/url-checker.js"></script>
+  <script src="src/checker/mode-tabs.js"></script>
+  <script src="src/i18n/copy-checker.js"></script>
+  <script src="src/app/navigation.js"></script>
+  <script src="src/checker/home-helpers.js"></script>
+  <script src="src/ui/dialogs.js"></script>
+  <script src="src/i18n/copy-risk.js"></script>
+  <script src="src/settings/settings.js"></script>
+  <script src="src/history/history.js"></script>
+  <script src="src/settings/account-data.js"></script>
+  <script src="src/auth/forgot-password.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/dataset/explorer.js"></script>
+</body>
+</html>
