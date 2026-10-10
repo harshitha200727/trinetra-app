@@ -6,7 +6,7 @@ function applyTheme(mode) {
   document.body.classList.toggle("night", dark);
   $("#theme-label").textContent = dark ? "Light" : "Night";
   document.querySelectorAll("#theme-seg button").forEach(b => b.classList.toggle("on", b.dataset.mode === mode));
-  $("#side-theme-icon").textContent = dark ? "☀" : "☾"; $("#top-theme").textContent = dark ? "☀" : "☾"; $("#hdr-theme").textContent = dark ? "☀" : "☾"; $("#side-theme-label").textContent = dark ? "Light mode" : "Dark mode";
+  $("#side-theme-icon").textContent = dark ? "☀" : "☾"; $("#top-theme").textContent = dark ? "☀" : "☾"; $("#hdr-theme").textContent = dark ? "☀" : "☾"; $("#land-theme").textContent = dark ? "☀" : "☾"; $("#side-theme-label").textContent = dark ? "Light mode" : "Dark mode";
   try { localStorage.setItem("fv_theme_mode", mode); } catch (e) {}
 }
 $("#side-theme").addEventListener("click", () => applyTheme(document.body.classList.contains("night") ? "light" : "dark"));

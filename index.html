@@ -13,8 +13,9 @@
   <link rel="manifest" href="manifest.webmanifest">
 </head>
 <body>
+  <div data-component="landing"></div>
   <div data-component="auth"></div>
-  <main class="shell" id="app">
+  <main class="shell" id="app" hidden>
     <div data-component="topbar"></div>
     <div data-component="sidebar-backdrop"></div>
 <div data-component="header"></div>
@@ -36,6 +37,7 @@
   </main>
 
   <script src="data/dataset.js"></script>
+  <script src="components/landing.js"></script>
   <script src="components/auth.js"></script>
   <script src="components/topbar.js"></script>
   <script src="components/sidebar-backdrop.js"></script>
@@ -71,6 +73,8 @@
   <script src="src/history/history.js"></script>
   <script src="src/settings/account-data.js"></script>
   <script src="src/auth/forgot-password.js"></script>
+  <script src="src/i18n/copy-landing.js"></script>
+  <script src="src/landing/landing.js"></script>
   <script src="src/main.js"></script>
   <script src="src/dataset/explorer.js"></script>
 </body>

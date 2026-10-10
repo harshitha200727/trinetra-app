@@ -13,7 +13,7 @@ No build step is needed.
 - **Local server (recommended):** `npm start` (or `python3 -m http.server 5173`) and open http://localhost:5173
 - **Sanity check:** `npm run check` verifies every script listed in `index.html` exists and parses.
 
-Everything runs in the browser. Accounts, history and settings are stored in this browser only (localStorage). Typed text and screenshots are analysed locally; screenshot text reading uses Tesseract.js, which is downloaded from a CDN the first time (internet needed once).
+Signed-out visitors see the landing page; the checker needs an account. Everything runs in the browser. Accounts, history and settings are stored in this browser only (localStorage). Typed text and screenshots are analysed locally; screenshot text reading uses Tesseract.js, which is downloaded from a CDN the first time (internet needed once).
 
 ## Project structure
 
@@ -23,6 +23,7 @@ manifest.webmanifest     Web app manifest (name, colours, icon)
 css/
   styles.css             All styles: layout, components, light/dark theme, risk levels
 components/              HTML markup, one file per UI piece (mounted by src/mount.js)
+  landing.js             Public landing page (signed-out visitors)
   auth.js  topbar.js  header.js  sidebar.js  sidebar-backdrop.js  bottom-nav.js
   view-home.js  view-dash.js  view-history.js  view-report.js
   view-academy.js  view-settings.js  view-database.js
@@ -37,6 +38,7 @@ src/
   i18n/                  English / Hindi / Tamil text (copy-*.js)
   checker/               message, screenshot (OCR), URL / QR checkers, mode tabs
   auth/                  accounts, sign-in, forgot password
+  landing/landing.js     landing page buttons and scroll animations
   dashboard/             check log, dashboard, check cards
   history/               check history
   settings/              settings, privacy, data export / delete
@@ -44,7 +46,7 @@ src/
   ui/dialogs.js          in-page confirm / alert dialogs
   dataset/explorer.js    Scam Database (admin only) and "similar messages" matcher
 data/dataset.js          Labelled example messages in 12 languages
-assets/                  Logos (light and dark)
+assets/                  Logos (light and dark); landing/ holds app screenshots used on the landing page
 scripts/check.js         Syntax / file sanity check
 ```
 

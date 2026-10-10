@@ -44,8 +44,8 @@ function updateWho() {
   if (m) { try { const dn = localStorage.getItem("fv_display_name_" + m.email) || ""; const dnf = $("#settings-display-name"); if (dnf) dnf.value = dn; } catch (e) {} }
 }
 function updateAuthUI() { const loggedIn = !!me(); $("#dash-nav").hidden = !loggedIn; $("#signout").hidden = !loggedIn; $("#signin-nav").hidden = loggedIn; $("#sidebar-userchip").hidden = !loggedIn; document.querySelectorAll('.sidelink[data-auth="1"]').forEach(b => b.hidden = !loggedIn); { const dbn = $("#nav-database"); if (dbn) dbn.hidden = !(loggedIn && me().role === "admin"); } document.querySelectorAll(".acct-only").forEach(c => c.hidden = !loggedIn); if (!loggedIn) showView("home"); }
-function showApp() { $("#auth").hidden = true; $("#app").hidden = false; updateWho(); updateAuthUI(); if (me()) { goDash(); } }
-function showAuth() { $("#app").hidden = true; $("#auth").hidden = false; $("#a-pw").value = ""; $("#a-pw2").value = ""; setAuthMode("in"); }
+function showApp() { $("#auth").hidden = true; $("#landing").hidden = true; $("#app").hidden = false; updateWho(); updateAuthUI(); if (me()) { showView("home"); } }
+function showAuth() { $("#app").hidden = true; $("#landing").hidden = true; $("#auth").hidden = false; window.scrollTo(0, 0); $("#a-pw").value = ""; $("#a-pw2").value = ""; setAuthMode("in"); }
 document.querySelectorAll(".pw-toggle").forEach(btn => {
   btn.addEventListener("click", () => {
     const inp = document.getElementById(btn.dataset.target);
@@ -58,5 +58,5 @@ document.querySelectorAll(".pw-toggle").forEach(btn => {
 });
 function goHome() { renderDash(); window.scrollTo(0, 0); }
 function goDash() { showView("dash"); renderDash(); }
-$("#dash-nav").addEventListener("click", goDash); $("#signin-nav").addEventListener("click", showAuth); $("#signout").addEventListener("click", () => { sess.set(null); updateAuthUI(); showAuth(); });
+$("#dash-nav").addEventListener("click", goDash); $("#signin-nav").addEventListener("click", showAuth); $("#signout").addEventListener("click", () => { sess.set(null); updateAuthUI(); showLanding(); });
 document.querySelector(".brand[href]").addEventListener("click", () => window.scrollTo(0, 0));

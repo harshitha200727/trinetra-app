@@ -1,6 +1,7 @@
 /* Component: auth — markup is mounted into index.html by src/mount.js */
 (window.FV_COMPONENTS = window.FV_COMPONENTS || {})["auth"] = `<div id="auth" class="authwrap" hidden>
     <div class="panel authbox">
+      <button type="button" class="linkbtn auth-back" id="a-back"><span aria-hidden="true">←</span> <span data-i18n="authBack">Back</span></button>
       <span class="brand"><span class="brand-logo" role="img" aria-label="Trinetra logo"></span><span class="brand-word">Trinetra</span></span>
       <h2 data-i18n="authTitle">Sign in to Trinetra</h2>
       <p class="fine" data-i18n="authSub"></p>
