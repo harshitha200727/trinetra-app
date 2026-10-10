@@ -995,3 +995,9 @@
       .land-foot { flex-direction:column; }
     }
     @media (max-width:420px) { .land-brand .brand-word { display:none; } }
+
+    /* Sign-in password field: keep the same look when "show password" switches it to type=text, and when the browser autofills */
+    .pwrap input { width:100%; border:1px solid var(--line); border-radius:12px; padding:12px 44px 12px 12px; background:var(--cream); color:var(--ink); font:inherit; outline:none; }
+    #auth .pwrap input:focus { border-color:var(--brand-strong); box-shadow:0 0 0 3px rgba(47,111,161,.15); }
+    #auth input:-webkit-autofill, #auth input:-webkit-autofill:focus { -webkit-text-fill-color:var(--ink); box-shadow:0 0 0 1000px var(--cream) inset; caret-color:var(--ink); transition:background-color 9999s; }
+    .pwrap .pw-toggle { right:6px; width:32px; height:32px; display:grid; place-items:center; }
