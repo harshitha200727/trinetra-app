@@ -37,7 +37,7 @@ $("#data-delete-account").addEventListener("click", async () => {
   if (!(await appConfirm(tx("confirmDeleteAccount")))) return;
   const users = store.get("fv_users", {}); delete users[m.email]; store.set("fv_users", users);
   store.set("fv_scans", store.get("fv_scans", []).filter(x => x.u !== m.email));
-  try { localStorage.removeItem("fv_avatar_" + m.email); localStorage.removeItem("fv_display_name_" + m.email); } catch (e) {} sess.set(null); updateAuthUI(); showAuth();
+  try { localStorage.removeItem("fv_avatar_" + m.email); localStorage.removeItem("fv_display_name_" + m.email); } catch (e) {} sess.set(null); updateAuthUI(); showLanding();
 });
 
 document.addEventListener("click", e => {
